@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jason TI Service | A sua TI em boas mãos</title>
+  <!-- Google Fonts & FontAwesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    :root {
+      --primary: #0F172A;
+      --secondary: #2563EB;
+      --accent: #0284C7;
+      --bg-light: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --text-main: #1E293B;
+      --text-muted: #64748B;
+      --border: #E2E8F0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    /* Header Navigation */
+    header {
+      background: var(--primary);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 2rem;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #FFF;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo span {
+      color: var(--secondary);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #94A3B8;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #FFF;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+      color: #FFF;
+      padding: 6rem 2rem 5rem;
+      text-align: center;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      margin-bottom: 1.2rem;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      color: #94A3B8;
+      margin-bottom: 2rem;
+    }
+
+    .btn-cta {
+      display: inline-block;
+      background: var(--secondary);
+      color: #FFF;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .btn-cta:hover {
+      background: #1D4ED8;
+      transform: translateY(-2px);
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 5rem 2rem;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .section-title h2 {
+      font-size: 2.2rem;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+    }
+
+    /* Grid Services */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .service-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2.5rem;
+      transition: transform 0.3s, box-shadow 0.3s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+    }
+
+    .icon-box {
+      width: 60px;
+      height: 60px;
+      background: #EFF6FF;
+      color: var(--secondary);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .service-card h3 {
+      font-size: 1.35rem;
+      margin-bottom: 0.8rem;
+      color: var(--primary);
+    }
+
+    .service-card p {
+      color: var(--text-muted);
+      font-size: 0.98rem;
+    }
+
+    /* Contact & CTA Section */
+    .contact-section {
+      background: var(--primary);
+      color: #FFF;
+      border-radius: 16px;
+      padding: 4rem 2rem;
+      margin-top: 3rem;
+      text-align: center;
+    }
+
+    .contact-section h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .contact-section p {
+      color: #94A3B8;
+      margin-bottom: 2.5rem;
+      font-size: 1.1rem;
+    }
+
+    .contact-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-whatsapp {
+      background: #22C55E;
+      color: #FFF;
+      padding: 0.9rem 1.8rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: background 0.3s;
+    }
+
+    .btn-whatsapp:hover {
+      background: #16A34A;
+    }
+
+    .btn-email {
+      background: transparent;
+      color: #FFF;
+      border: 2px solid #334155;
+      padding: 0.9rem 1.8rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: border-color 0.3s;
+    }
+
+    .btn-email:hover {
+      border-color: #94A3B8;
+    }
+
+    /* Footer */
+    footer {
+      background: #020617;
+      color: #64748B;
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2rem; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="logo">
+        <i class="fa-solid fa-server"></i> JASON <span>TI SERVICE</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>A sua TI em boas mãos</h1>
+      <p>Infraestrutura corporativa, segurança de dados antinvasão, conectividade Mesh e gestão completa para sua empresa rodar sem interrupções.</p>
+      <a href="#contato" class="btn-cta">Falar com um Especialista</a>
+    </div>
+  </section>
+
+  <!-- Serviços -->
+  <div class="container" id="servicos">
+    <div class="section-title">
+      <h2>Soluções Especializadas em TI</h2>
+      <p>Serviços projetados para empresas que exigem alta disponibilidade e segurança máxima.</p>
+    </div>
+
+    <div class="services-grid">
+      <!-- Serviço 1 -->
+      <div class="service-card">
+        <div class="icon-box"><i class="fa-solid fa-network-wired"></i></div>
+        <h3>1. Implementação de Redes e Servidores</h3>
+        <p>Projetos e estruturação de ambientes computacionais de alta performance, garantia de redundância e disponibilidade contínua.</p>
+      </div>
+
+      <!-- Serviço 2 -->
+      <div class="service-card">
+        <div class="icon-box"><i class="fa-solid fa-shield-halved"></i></div>
+        <h3>2. Firewall Completo e Antinvasão</h3>
+        <p>Proteção de borda com pfSense, gestão de segurança antinvasão, controle severo de tráfego, VPNs seguras e políticas de acesso.</p>
+      </div>
+
+      <!-- Serviço 3 -->
+      <div class="service-card">
+        <div class="icon-box"><i class="fa-solid fa-hard-drive"></i></div>
+        <h3>3. Servidores de Arquivos (Storage)</h3>
+        <p>Criação e manutenção de storages corporativos para centralização de dados, controle de permissões e rotinas automatizadas de backup.</p>
+      </div>
+
+      <!-- Serviço 4 -->
+      <div class="service-card">
+        <div class="icon-box"><i class="fa-solid fa-wifi"></i></div>
+        <h3>4. Infraestrutura Wi-Fi Mesh</h3>
+        <p>Implementação e manutenção de redes sem fio com tecnologia Mesh para cobertura total de ambientes sem perda de sinal e roaming fluido.</p>
+      </div>
+
+      <!-- Serviço 5 -->
+      <div class="service-card">
+        <div class="icon-box"><i class="fa-solid fa-clock-rotate-left"></i></div>
+        <h3>5. Gestão de TI e Suporte 24h</h3>
+        <p>Acompanhamento preventivo contínuo, suporte técnico 24h e controle de fluxo do estoque de materiais novos, em uso e para descarte.</p>
+      </div>
+    </div>
+
+    <!-- Seção Contato -->
+    <div class="contact-section" id="contato">
+      <h2>Pronto para elevar o nível da sua TI?</h2>
+      <p>Consulte-nos e agende uma avaliação da sua infraestrutura técnica.</p>
+      <div class="contact-buttons">
+        <a href="https://wa.me/5595991715144" target="_blank" class="btn-whatsapp">
+          <i class="fa-brands fa-whatsapp"></i> WhatsApp: (95) 99171-5144
+        </a>
+        <a href="mailto:jason.ti.service.com" class="btn-email">
+          <i class="fa-solid fa-envelope"></i> jason.ti.service.com
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Jason TI Service. Todos os direitos reservados. "A sua TI em boas mãos."</p>
+  </footer>
+
+</body>
+</html>
